@@ -1,0 +1,89 @@
+html{
+    background-color: #efefef;
+    width: 100%;
+}    
+
+body{
+    background-color: #efefef;
+    margin: 0;
+}
+
+h1{
+    margin-top:0;   
+}
+
+h2{
+    font-family: open-sans;
+    font-weight: 100;
+}
+
+a{
+    color: #4BD7CD;
+    text-decoration: none;    
+}
+a:hover{
+    color: #09B2A6;
+}    
+.title{
+    text-align:center;
+    background-image:url('images/hdr_tri.png');
+    background-position:center -10px;
+    background-repeat:no-repeat;
+    height: 345px;
+    margin-top: -345px;
+    position:relative;
+}    
+header{
+    text-align:center;
+    position:relative;
+    height: 345px;
+    z-index:10;
+}
+
+header p{
+    margin-top: 0;
+    padding-top:20px;
+}
+
+#main{
+    width: 1050px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+@-webkit-keyframes colorchange {
+   0% {
+    -webkit-filter: invert(100%);
+    }
+    100% {
+    -webkit-filter: invert(0%);
+    } 
+}    
+
+header{
+    -webkit-animation-name: colorchange;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-timing-function: ease; /* ease is the default */
+    -webkit-animation-delay: 0s;             /* 0 is the default */
+    -webkit-animation-iteration-count: infinite;    /* 1 is the default */
+    -webkit-animation-direction: alternate;  /* normal is the default */
+}
+
+@-webkit-keyframes explode {
+				0% {
+				-webkit-filter: custom(url(shaders/vertex/quad-explosion.vs) mix(url(shaders/fragment/quad-explosion.fs) normal source-atop), 76 100 border-box detached, matrix rotateX(0deg) rotateY(0deg) rotateZ(0deg), perspective 1000, amount 1.5, centerX 0.5, centerY 0.5, t 0.5, fade 0.7);
+				}
+				100% {
+				-webkit-filter: custom(url(shaders/vertex/quad-explosion.vs) mix(url(shaders/fragment/quad-explosion.fs) normal source-atop), 76 100 border-box detached, matrix rotateX(0deg) rotateY(0deg) rotateZ(0deg), perspective 1000, amount 1.5, centerX 0.5, centerY 0.5, t 1, fade 0.7);
+				}
+				
+			}
+			.title{
+				-webkit-animation-name: explode;
+				-webkit-animation-duration: 5s;
+				-webkit-animation-timing-function: ease; /* ease is the default */
+				-webkit-animation-delay: 0s;             /* 0 is the default */
+				-webkit-animation-iteration-count: infinite;    /* 1 is the default */
+				-webkit-animation-direction: alternate;  /* normal is the default */
+			}
+
